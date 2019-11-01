@@ -1,47 +1,31 @@
 import VueRouter from 'vue-router';
 
-const NoLight = {template: `<div class="circle no-light"/>`};
-const Red = {template: `<div class="circle red active"/>`};
-const Yellow = {template: `<div class="circle yellow active"/>`};
-const Green = {template: `<div v-else class="circle green active" />`};
+const Red = { template: `<div class="circle red-back active"/>` };
+const Yellow = { template: `<div class="circle yellow-back active"/>` };
+const Green = { template: `<div class="circle green-back active" />` };
 
 const router = new VueRouter({
     routes: [
         {
-            path: '/',
-            name: 'noLight',
-            components: {
-                red: NoLight,
-                yellow: NoLight,
-                green: NoLight
-            }
-        },
-        {
             path: '/1',
             name: 'red',
             components: {
-                red: Red,
-                yellow: NoLight,
-                green: NoLight
-            }
+                red: Red
+            },
         },
         {
             path: '/2',
-            name: 'yellowToGreen',
+            name: 'yellowToG',
             components: {
-                red: NoLight,
-                yellow: Yellow,
-                green: NoLight
+                yellow: Yellow
             }
         },
         {
             path: '/3',
             name: 'green',
             components: {
-                red: NoLight,
-                yellow: NoLight,
                 green: Green
-            }
+            },
         }
     ]
 });
