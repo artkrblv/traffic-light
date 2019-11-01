@@ -26,5 +26,5 @@ Vue.component('countdown', {
 
 new Vue({
     el: "#app",
-    render: h => <App />,
+    render: h => h(App),
 });
